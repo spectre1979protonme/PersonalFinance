@@ -12,12 +12,13 @@ TECH STACK
 ** Agentic Financial Advisor
 
 GOALS
-* Manage Investments
+* Manage Investments (multiple portfolios)
 * Manage Savings
 * Manage Expenses
 * Manage Income
-* Manage Pension Funds
-* Predict Rate of Return
+* Manage Pension Funds 
+* Calculate & Predict Rate of Return
 * Calculate Net Worth
+
 
 
