@@ -8,5 +8,3 @@ Distribution Policy: Distributing
 * WHY: https://thepoorswiss.com/distributing-vs-accumulating/
 Source of ETF information: https://www.justetf.com/en/
 3rd Pillar: Finpension
-
-
