@@ -1,6 +1,8 @@
 CREATE SCHEMA forex
 AUTHORIZATION postgres;
 
+-- FOREX.CURRENCY
+
 CREATE TABLE forex.currency
 (
     id smallint,
@@ -14,4 +16,21 @@ ALTER TABLE IF EXISTS forex.currency
 INSERT INTO forex.currency (id,name) VALUES(1,'CHF');
 INSERT INTO forex.currency (id,name) VALUES(2,'EUR');
 INSERT INTO forex.currency (id,name) VALUES(3,'USD');
+
+-- FOREX.PAIR
+
+CREATE TABLE forex.pair
+(
+    id smallint,
+    name character varying(50),
+	yfTicker character varying(50),
+    PRIMARY KEY (id)
+);
+
+ALTER TABLE IF EXISTS forex.pair
+    OWNER to postgres;
+
+INSERT INTO forex.pair (id,name,yfTicker) VALUES(1,'EURCHF','EURCHF=X');
+INSERT INTO forex.pair (id,name,yfTicker) VALUES(2,'USDCHF','USDCHF=X');
+INSERT INTO forex.pair (id,name,yfTicker) VALUES(3,'EURUSD','EURUSD=X');
 
