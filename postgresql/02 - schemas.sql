@@ -1,0 +1,11 @@
+CREATE SCHEMA forex
+AUTHORIZATION postgres;
+
+CREATE SCHEMA asset
+AUTHORIZATION postgres;
+
+CREATE SCHEMA expense
+AUTHORIZATION postgres;
+
+CREATE SCHEMA pension
+AUTHORIZATION postgres;

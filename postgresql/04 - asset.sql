@@ -1,6 +1,3 @@
-CREATE SCHEMA asset
-AUTHORIZATION postgres;
-
 -- ASSET.DISTRIBUTIONPOLICY
 
 CREATE TABLE asset.distribution_policy

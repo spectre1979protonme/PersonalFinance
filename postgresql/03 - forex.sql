@@ -1,6 +1,3 @@
-CREATE SCHEMA forex
-AUTHORIZATION postgres;
-
 -- FOREX.CURRENCY
 
 CREATE TABLE forex.currency
