@@ -1,4 +1,5 @@
 LINUX MINT INSTALLATION WITH POSTGRESQL & PG_CRON 16
+----------------------------------------------------
 
 1.INSTALL
 sudo apt update
