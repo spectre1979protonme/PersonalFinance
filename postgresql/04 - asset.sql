@@ -75,4 +75,35 @@ INSERT INTO asset.portfolio (id,name,valid_from,valid_to) VALUES(2,'FinPension',
 INSERT INTO asset.portfolio (id,name,valid_from,valid_to) VALUES(3,'UBS','2018-01-01',NULL);
 INSERT INTO asset.portfolio (id,name,valid_from,valid_to) VALUES(4,'IBKR Kids','2024-07-05',NULL);
 
--- ASSET.X
+-- ASSET.INSTRUMENT
+
+CREATE TABLE asset.instrument (
+    id bigint,
+    market_id smallint,
+    ticker varchar(10),
+    instrument_type_id smallint,
+    name text,
+    isin varchar(50),
+    url text,
+    distribution_policy_id smallint,
+    currency_id smallint,
+    yticker varchar(50),
+
+	PRIMARY KEY (id),
+
+	CONSTRAINT fk_instrument_market
+	FOREIGN KEY (market_id)
+	REFERENCES asset.market (id),
+
+	CONSTRAINT fk_instrument_type
+	FOREIGN KEY (instrument_type_id)
+	REFERENCES asset.instrument_type (id),
+
+    CONSTRAINT fk_instrument_distribution
+	FOREIGN KEY (distribution_policy_id)
+	REFERENCES asset.distribution_policy (id),	
+
+    CONSTRAINT fk_instrument_currency
+	FOREIGN KEY (currency_id)
+	REFERENCES forex.currency (id)
+);

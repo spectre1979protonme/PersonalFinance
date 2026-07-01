@@ -9,3 +9,15 @@ AUTHORIZATION postgres;
 
 CREATE SCHEMA pension
 AUTHORIZATION postgres;
+
+CREATE SCHEMA market
+AUTHORIZATION postgres;
+
+CREATE SCHEMA staging
+AUTHORIZATION postgres;
+
+CREATE SCHEMA income
+AUTHORIZATION postgres;
+
+
+

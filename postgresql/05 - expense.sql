@@ -22,4 +22,44 @@ INSERT INTO expense.category (id,name) VALUES(10,'Discretionary');
 INSERT INTO expense.category (id,name) VALUES(11,'Groceries');
 INSERT INTO expense.category (id,name) VALUES(12,'Pension');
 
--- EXPENSE.X
+-- EXPENSE.EXPENSE_TYPE
+
+CREATE TABLE expense.expense_type (
+    id smallint,
+    category smallint NOT NULL,
+    name varchar(50) NOT NULL,
+    currency smallint NOT NULL,
+    mandatory boolean NOT NULL,
+    deductible boolean NOT NULL,
+    investment boolean NOT NULL,
+
+    PRIMARY KEY (id),
+
+    CONSTRAINT fk_expensetype_category
+        FOREIGN KEY (category)
+        REFERENCES expense.category (id),
+
+    CONSTRAINT fk_expensetype_currency
+        FOREIGN KEY (currency)
+        REFERENCES forex.currency (id)
+);
+
+-- EXPENSE.EXPENSE_PER_YEAR
+
+CREATE TABLE expense.expense_per_year (
+    id integer ,
+    expense_type_id smallint NOT NULL,
+    name varchar(50) NOT NULL,
+    year integer NOT NULL,
+    est_amount_month numeric(18,2) NOT NULL, --estimated amount per month
+    est_amount_year numeric(18,2) NOT NULL, --estimate amount per year
+	amount_month numeric(18,2) NULL, --real expense per month
+	amount_year numeric(18,2) NULL, --real expense per year
+    month_schedule smallint NOT NULL,
+
+	PRIMARY KEY(id),
+	
+    CONSTRAINT fk_expense_per_year_type
+        FOREIGN KEY (expense_type_id)
+        REFERENCES expense.expense_type (id)
+);

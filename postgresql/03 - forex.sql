@@ -31,3 +31,19 @@ INSERT INTO forex.pair (id,name,yfTicker) VALUES(1,'EURCHF','EURCHF=X');
 INSERT INTO forex.pair (id,name,yfTicker) VALUES(2,'USDCHF','USDCHF=X');
 INSERT INTO forex.pair (id,name,yfTicker) VALUES(3,'EURUSD','EURUSD=X');
 
+-- FOREX.FXMONTHAVG
+
+CREATE TABLE forex.fxmonthavg (
+    pair      SMALLINT NOT NULL,
+    year      SMALLINT NOT NULL,
+    month     SMALLINT NOT NULL,
+    value 	  NUMERIC(18,10) NOT NULL,
+    last_update   TIMESTAMP NOT NULL,
+
+    CONSTRAINT pk_fxmonthavg
+        PRIMARY KEY (pair, year, month),
+
+    CONSTRAINT fk_fxmonthavg_pair
+        FOREIGN KEY (pair)
+        REFERENCES forex.pair (id)
+);
